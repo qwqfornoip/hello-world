@@ -2,7 +2,7 @@
 
 ### 引例
 
-![二分](hello-world/dichotomy/dichotomy.png)
+![二分](dichotomy/dichotomy.png)
 
 > 移动石头的个数越多，答案越大（NOIP2015跳石头）。 
 >
