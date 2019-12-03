@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>test</title>
+	<meta charset="utf-8"/>
 	<style type="text/css">
 		*{
 			padding: 0;
@@ -13,7 +13,7 @@
 			height: 500px;
 			margin: 50px auto;
 		}
-		li{
+		li {
 			width: 150px;
 			height: 150px;
 			background: skyblue;
@@ -26,7 +26,7 @@
 			font-size: 20px;
 			font-weight: bold;
 		}
-		#uls li button{
+		#uls li button {
 			width: 50px;
 			height: 30px;
 		}
@@ -45,8 +45,8 @@
 		<li>test3</li>
 		<li>test4</li>
 		<li>
-			<button id='start'>start</button>
-			<button id='end'>end</button>
+			<button id="start">start</button>
+			<button id="end">end</button>
 		</li>
 		<li>test5</li>
 		<li>test6</li>
@@ -54,29 +54,25 @@
 		<li>test8</li>
 	</ul>
 	<script type="text/javascript">
-		var start = document.getElementById("start");
-		var end = document.getElementById("end");
-		var arr = [0,1,2,5,8,7,6,3];//按这个下标依次旋转
-		var lis = document.getElementsByTagName("li");
-		var num = 0;
-
-		start.οnclick = function() {
-
+		var start = document.getElementById('start');
+		var end = document.getElementById('end');
+		//var time = 0;
+		var arr=[0,1,2,5,8,7,6,3];//按这个下标依次旋转
+		var lis=document.getElementsByTagName("li");
+		var num=0;  //定义初识下标
+		start.onclick = function() {
 			alert("test");
-
 			start.disabled = true;
 			time = setInterval(function(){
-			lis[arr[num]].className = "";
-				num = (++num)%7;
+				lis[arr[num]].className = "";
+				num++;
+				if (num > 7)
+					num = 0;
 				lis[arr[num]].className = "light";
 			}, 50)
 		}
-		
-		end.οnclick = function() {
-
-			alert("test");
-
-			start.disabled=false;
+		end.onclick = function() {
+			start.disabled = false;
 			clearInterval(time);
 		}
 	</script>
